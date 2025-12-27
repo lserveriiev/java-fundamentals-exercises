@@ -48,4 +48,15 @@ class ExerciseIntroductionTest {
 
         assertThat(encodedMessage).isEqualTo("VGhlIGtleSB0byBlZmZpY2llbnQgbGVhcm5pbmcgaXMgcHJhY3RpY2Uh");
     }
+
+    @Test
+    @Order(3)
+    @DisplayName("encodeMessage returns correct encoded message")
+    @SneakyThrows
+    void shouldEncodeMessage() {
+        String expected = "VGhlIGtleSB0byBlZmZpY2llbnQgbGVhcm5pbmcgaXMgcHJhY3RpY2Uh";
+        var encodedMessage = exerciseIntroduction.encodeMessage(EXPECTED_MESSAGE);
+
+        assertThat(encodedMessage).isEqualTo(expected);
+    }
 }
